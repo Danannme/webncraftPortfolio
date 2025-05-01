@@ -1,10 +1,13 @@
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
-export default function Services() {
+export default function HomePage() {
     return (
         // Hero sectcion
-        <div className=" hero-section w-full max-w-[1200px] h-dvh flex items-center pt-10 z-0">
+        <div
+            className=" hero-section w-full max-w-[1200px] h-svh flex items-center pt-10
+        "
+        >
             <motion.div className="flex flex-col md:flex-row w-[85%] mx-auto items-center gap-16 md:gap-6">
                 <div className="hero-text flex flex-col gap-6">
                     <h1 className="text-5xl font-bold">

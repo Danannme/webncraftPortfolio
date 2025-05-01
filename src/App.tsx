@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import HomePage from "./section/HomePage";
+import AboutUs from "./section/AboutUs";
 import Services from "./section/Services";
+import Portfolio from "./section/Portfolio";
 
 import { Button } from "./components/ui/button";
 import { BsListNested } from "react-icons/bs";
@@ -11,7 +13,6 @@ export default function App() {
     const [isOpen, setIsOpen] = useState(false);
 
     const html = document.getElementById("html");
-    console.log(html);
     if (isOpen) {
         html.style.overflowY = "hidden";
     } else {
@@ -25,7 +26,7 @@ export default function App() {
             }`}
         >
             {/* Navbar */}
-            <motion.div className="navbar w-full flex items-center px-10 md:px-16 py-6 z-5 fixed top-0">
+            <motion.div className="navbar w-full flex items-center px-10 md:px-16 py-6 z-10 fixed top-0 bg-white">
                 <motion.div className="navbar-logo">
                     <img src="img/logo.png" className="w-[4rem]" />
                 </motion.div>
@@ -118,7 +119,9 @@ export default function App() {
             ></motion.div>
 
             <HomePage />
+            <AboutUs />
             <Services />
+            <Portfolio />
         </div>
     );
 }
