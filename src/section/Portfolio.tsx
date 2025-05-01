@@ -10,7 +10,7 @@ export default function Portfolio() {
             </motion.h1>
             <motion.div className="w-full flex flex-wrap justify-center gap-10 md:gap-0 md:gap-y-6 z-0">
                 <PinContainer title="the link" href="">
-                    <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[18rem] h-[18rem] ">
+                    <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[18rem] h-[18rem]">
                         <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-black">
                             Porject Title
                         </h3>

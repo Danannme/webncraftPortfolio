@@ -4,6 +4,8 @@ import HomePage from "./section/HomePage";
 import AboutUs from "./section/AboutUs";
 import Services from "./section/Services";
 import Portfolio from "./section/Portfolio";
+import PricingSection from "./section/Pricing";
+import ContactUs from "./section/ContactUs";
 
 import { Button } from "./components/ui/button";
 import { BsListNested } from "react-icons/bs";
@@ -42,6 +44,9 @@ export default function App() {
                     </motion.li>
                     <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
                         Portfolio
+                    </motion.li>
+                    <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
+                        Pricing
                     </motion.li>
                     <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
                         Contact Us
@@ -106,6 +111,12 @@ export default function App() {
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
                     >
+                        Pricing
+                    </motion.li>
+                    <motion.li
+                        onClick={() => setIsOpen(false)}
+                        className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                    >
                         Contact Us
                     </motion.li>
                 </motion.ul>
@@ -122,6 +133,8 @@ export default function App() {
             <AboutUs />
             <Services />
             <Portfolio />
+            <PricingSection />
+            <ContactUs />
         </div>
     );
 }
