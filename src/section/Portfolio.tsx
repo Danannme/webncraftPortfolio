@@ -5,9 +5,12 @@ import { PinContainer } from "../components/ui/3d-pin";
 export default function Portfolio() {
     return (
         <div className="w-full max-w-[1200px] grid gap-6 place-items-center mb-20 md:mb-40">
+            {/* Title */}
             <motion.h1 className="text-3xl font-bold">
                 Our <span className="text-[#2e6a9e]">Project</span>
             </motion.h1>
+
+            {/* Portfolio container */}
             <motion.div className="w-full flex flex-wrap justify-center gap-10 md:gap-0 md:gap-y-6 z-0">
                 <PinContainer title="the link" href="">
                     <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[18rem] h-[18rem]">

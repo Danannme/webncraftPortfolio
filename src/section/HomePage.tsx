@@ -9,6 +9,7 @@ export default function HomePage() {
         "
         >
             <motion.div className="flex flex-col md:flex-row w-[85%] mx-auto items-center gap-16 md:gap-6">
+                {/* Text */}
                 <div className="hero-text flex flex-col gap-6">
                     <h1 className="text-5xl font-bold">
                         We create{" "}
@@ -24,6 +25,8 @@ export default function HomePage() {
                         Get Started
                     </Button>
                 </div>
+
+                {/* Image */}
                 <div className="relative hero-img-container flex w-full">
                     <img
                         src="/img/heroImg2.png"

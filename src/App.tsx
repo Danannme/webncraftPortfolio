@@ -6,6 +6,7 @@ import Services from "./section/Services";
 import Portfolio from "./section/Portfolio";
 import PricingSection from "./section/Pricing";
 import ContactUs from "./section/ContactUs";
+import Footer from "./section/Footer";
 
 import { Button } from "./components/ui/button";
 import { BsListNested } from "react-icons/bs";
@@ -135,6 +136,7 @@ export default function App() {
             <Portfolio />
             <PricingSection />
             <ContactUs />
+            <Footer />
         </div>
     );
 }

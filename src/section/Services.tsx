@@ -12,6 +12,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 
+// Services list
 const cardList = [
     {
         icon: <CgWebsite size={30} />,
@@ -48,6 +49,7 @@ export default function Services() {
             <motion.div className="flex flex-col justify-center md:flex-row gap-4">
                 {cardList.map((services) => {
                     return (
+                        // Services item
                         <Card className="w-full max-w-[400px] pt-0 overflow-hidden">
                             <CardHeader
                                 className={`w-[4rem] text-white p-4 bg-[${services.iconBgColor}] rounded-[84%_16%_100%_0%/0%_66%_34%_100%]`}

@@ -5,6 +5,7 @@ export default function ContactUs() {
     return (
         <section className="mb-20 md:mb-40">
             <div className="container">
+                {/* Text */}
                 <div className="mb-6">
                     <span className="text-sm font-semibold">Reach Us</span>
                     <h1 className="mt-1 mb-3 text-3xl font-bold text-balance">
@@ -15,6 +16,8 @@ export default function ContactUs() {
                         We&apos;d love to assist you.
                     </p>
                 </div>
+
+                {/* Card container */}
                 <div className="grid gap-10 md:grid-cols-3">
                     <div>
                         <span className="mb-3 flex size-12 flex-col items-center justify-center rounded-full bg-accent">
