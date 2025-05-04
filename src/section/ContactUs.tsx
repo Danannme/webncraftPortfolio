@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function ContactUs() {
     return (
-        <section className="mb-20 md:mb-40">
+        <section id="contactus" className="w-[90%] mb-20 md:mb-40 scroll-mt-30">
             <div className="container">
                 {/* Text */}
                 <div className="mb-6">

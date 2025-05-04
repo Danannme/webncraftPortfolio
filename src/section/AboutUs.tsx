@@ -2,7 +2,13 @@ import { motion } from "motion/react";
 
 export default function AboutUs() {
     return (
-        <motion.div className="flex flex-col items-center md:flex-row md:justify-center w-[85%] md:w-[70%] max-w-[1200px] gap-10 md:gap-50 mb-20 md:mb-40">
+        <motion.div
+            id="aboutus"
+            className="flex flex-col items-center md:flex-row md:justify-center w-[85%] md:w-[70%] max-w-[1200px] gap-10 md:gap-50 mb-20 md:mb-40 scroll-mt-28 md:scroll-mt-45"
+        >
+            <motion.h1 className="block md:hidden text-3xl font-bold">
+                Our <span className="text-[#2e6a9e]">Agency</span>
+            </motion.h1>
             <motion.div>
                 {/* Image */}
                 <img
@@ -14,7 +20,7 @@ export default function AboutUs() {
 
             {/* Text */}
             <motion.div className="grid gap-4">
-                <motion.h1 className="text-3xl font-bold">
+                <motion.h1 className="hidden md:block text-3xl font-bold">
                     Our <span className="text-[#2e6a9e]">Agency</span>
                 </motion.h1>
                 <motion.p>

@@ -37,7 +37,10 @@ const cardList = [
 export default function Services() {
     return (
         // About Us section
-        <div className="flex flex-col items-center w-[85%] max-w-[1200px] gap-4 mb-20 md:mb-40">
+        <div
+            id="services"
+            className="flex flex-col items-center w-[85%] max-w-[1200px] gap-4 mb-20 md:mb-40 scroll-mt-25 md:scroll-mt-40"
+        >
             <motion.h1 className="text-3xl font-bold text-center">
                 We Provide The Best{" "}
                 <span className="text-[#2e6a9e]">Services</span>

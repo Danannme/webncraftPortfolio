@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, scale, useScroll, useTransform } from "motion/react";
 import HomePage from "./section/HomePage";
 import AboutUs from "./section/AboutUs";
 import Services from "./section/Services";
@@ -14,6 +14,7 @@ import { RxCross1 } from "react-icons/rx";
 
 export default function App() {
     const [isOpen, setIsOpen] = useState(false);
+    const { scrollY } = useScroll();
 
     const html = document.getElementById("html");
     if (isOpen) {
@@ -22,6 +23,15 @@ export default function App() {
         html.style.overflowY = "visible";
     }
 
+    const shadowNav = useTransform(
+        scrollY,
+        [0, 100],
+        [
+            "rgba(0, 0, 0, 0) 0px 20px 25px -5px, rgba(0, 0, 0, 0) 0px 10px 10px -5px;",
+            "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;",
+        ]
+    );
+
     return (
         <div
             className={`flex flex-col items-center ${
@@ -29,29 +39,55 @@ export default function App() {
             }`}
         >
             {/* Navbar */}
-            <motion.div className="navbar w-full flex items-center px-10 md:px-16 py-6 z-10 fixed top-0 bg-white">
+            <motion.nav
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                style={{
+                    boxShadow: shadowNav,
+                }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="navbar w-full flex items-center px-10 md:px-16 py-6 z-10 fixed bg-white"
+            >
                 <motion.div className="navbar-logo">
                     <img src="img/logo.png" className="w-[4rem]" />
                 </motion.div>
                 <motion.ul className="hidden md:flex gap-10 ml-16">
-                    <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
+                    <motion.a
+                        href="#"
+                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                    >
                         Home
-                    </motion.li>
-                    <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
+                    </motion.a>
+                    <motion.a
+                        href="#aboutus"
+                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                    >
                         About Us
-                    </motion.li>
-                    <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
+                    </motion.a>
+                    <motion.a
+                        href="#services"
+                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                    >
                         Services
-                    </motion.li>
-                    <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
+                    </motion.a>
+                    <motion.a
+                        href="#portfolio"
+                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                    >
                         Portfolio
-                    </motion.li>
-                    <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
+                    </motion.a>
+                    <motion.a
+                        href="#pricing"
+                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                    >
                         Pricing
-                    </motion.li>
-                    <motion.li className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer">
+                    </motion.a>
+                    <motion.a
+                        href="#contactus"
+                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                    >
                         Contact Us
-                    </motion.li>
+                    </motion.a>
                 </motion.ul>
                 <motion.button className="hidden md:block ml-auto">
                     <Button className="bg-[#2e6a9e] shadow-[#2e6a9e] shadow-lg hover:bg-[#2b3946]">
@@ -66,10 +102,10 @@ export default function App() {
                         <BsListNested size={30} />
                     </Button>
                 </motion.span>
-            </motion.div>
+            </motion.nav>
 
             {/* Mobile Navbar */}
-            <motion.div
+            <motion.nav
                 className={`${
                     isOpen ? "block" : "hidden"
                 } md:hidden fixed top-0 right-0 w-[75%] h-dvh bg-white z-10`}
@@ -84,44 +120,50 @@ export default function App() {
                     </Button>
                 </motion.p>
                 <motion.ul className="grid gap-5 px-8">
-                    <motion.li
+                    <motion.a
+                        href="#"
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
                     >
                         Home
-                    </motion.li>
-                    <motion.li
+                    </motion.a>
+                    <motion.a
+                        href="#aboutus"
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
                     >
                         About Us
-                    </motion.li>
-                    <motion.li
+                    </motion.a>
+                    <motion.a
+                        href="#services"
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
                     >
                         Services
-                    </motion.li>
-                    <motion.li
+                    </motion.a>
+                    <motion.a
+                        href="#portfolio"
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
                     >
                         Portfolio
-                    </motion.li>
-                    <motion.li
+                    </motion.a>
+                    <motion.a
+                        href="#pricing"
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
                     >
                         Pricing
-                    </motion.li>
-                    <motion.li
+                    </motion.a>
+                    <motion.a
+                        href="#contactus"
                         onClick={() => setIsOpen(false)}
                         className="text-2xl font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
                     >
                         Contact Us
-                    </motion.li>
+                    </motion.a>
                 </motion.ul>
-            </motion.div>
+            </motion.nav>
             {/* Black bakcgroun when navbar open in mobile */}
             <motion.div
                 onClick={() => setIsOpen(false)}

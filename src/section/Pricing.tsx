@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Check } from "lucide-react";
 import {
     Card,
@@ -12,7 +11,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function PricingSection() {
     return (
-        <div className="bg-white mb-20 md:mb-40">
+        <div
+            id="pricing"
+            className="bg-white mb-20 md:mb-40 scroll-mt-22 md:scroll-mt-25"
+        >
             <div className="w-full mx-auto">
                 {/* Header */}
                 <div className="text-center mb-6">
