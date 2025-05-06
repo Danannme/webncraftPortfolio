@@ -1,5 +1,10 @@
-import { useState } from "react";
-import { motion, scale, useScroll, useTransform } from "motion/react";
+import { useState, useEffect, createContext } from "react";
+import {
+    AnimatePresence,
+    motion,
+    useScroll,
+    useTransform,
+} from "framer-motion";
 import HomePage from "./section/HomePage";
 import AboutUs from "./section/AboutUs";
 import Services from "./section/Services";
@@ -12,23 +17,47 @@ import { Button } from "./components/ui/button";
 import { BsListNested } from "react-icons/bs";
 import { RxCross1 } from "react-icons/rx";
 
+const navItems = [
+    { label: "Home", href: "#" },
+    { label: "About Us", href: "#aboutus" },
+    { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Contact Us", href: "#contactus" },
+];
+
+const navItemVariants = {
+    hidden: { y: -100 },
+    visible: { y: 0, transition: { bounce: 0 } },
+};
+
+export const StaggedParrent = createContext({
+    hidden: {},
+    visible: {},
+});
+
+export const DefaultVariant = createContext({
+    hidden: {},
+    visible: {},
+});
+
 export default function App() {
     const [isOpen, setIsOpen] = useState(false);
     const { scrollY } = useScroll();
 
-    const html = document.getElementById("html");
-    if (isOpen) {
-        html.style.overflowY = "hidden";
-    } else {
-        html.style.overflowY = "visible";
-    }
+    useEffect(() => {
+        const html = document.getElementById("html");
+        if (html) {
+            html.style.overflowY = isOpen ? "hidden" : "visible";
+        }
+    }, [isOpen]);
 
     const shadowNav = useTransform(
         scrollY,
         [0, 100],
         [
-            "rgba(0, 0, 0, 0) 0px 20px 25px -5px, rgba(0, 0, 0, 0) 0px 10px 10px -5px;",
-            "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;",
+            "rgba(0, 0, 0, 0) 0px 20px 25px -5px, rgba(0, 0, 0, 0) 0px 10px 10px -5px",
+            "rgba(0, 0, 0, 0.1) 0px 10px 10px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
         ]
     );
 
@@ -40,56 +69,58 @@ export default function App() {
         >
             {/* Navbar */}
             <motion.nav
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                variants={{
+                    hidden: {
+                        y: -100,
+                        opacity: 0,
+                    },
+                    visible: {
+                        y: 0,
+                        opacity: 1,
+                        transition: {
+                            staggerChildren: 0.1,
+                            bounceStiffness: 0,
+                        },
+                    },
+                }}
+                initial="hidden"
+                animate="visible"
                 style={{
                     boxShadow: shadowNav,
                 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="navbar w-full flex items-center px-10 md:px-16 py-6 z-10 fixed bg-white"
+                className="navbar w-full flex items-center px-10 md:px-16 py-4 z-10 fixed top-0 bg-white"
             >
-                <motion.div className="navbar-logo">
-                    <img src="img/logo.png" className="w-[4rem]" />
-                </motion.div>
+                <motion.a
+                    variants={{
+                        hidden: { y: -100 },
+                        visible: { y: 0 },
+                    }}
+                    transition={{ bounce: 0 }}
+                    href="#"
+                    className="navbar-logo"
+                >
+                    <img
+                        src="img/logo.png"
+                        className="w-[4rem] cursor-pointer"
+                    />
+                </motion.a>
                 <motion.ul className="hidden md:flex gap-10 ml-16">
-                    <motion.a
-                        href="#"
-                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
-                    >
-                        Home
-                    </motion.a>
-                    <motion.a
-                        href="#aboutus"
-                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
-                    >
-                        About Us
-                    </motion.a>
-                    <motion.a
-                        href="#services"
-                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
-                    >
-                        Services
-                    </motion.a>
-                    <motion.a
-                        href="#portfolio"
-                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
-                    >
-                        Portfolio
-                    </motion.a>
-                    <motion.a
-                        href="#pricing"
-                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
-                    >
-                        Pricing
-                    </motion.a>
-                    <motion.a
-                        href="#contactus"
-                        className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
-                    >
-                        Contact Us
-                    </motion.a>
+                    {navItems.map((item, index) => (
+                        <motion.a
+                            key={index}
+                            variants={navItemVariants}
+                            href={item.href}
+                            className="text-base font-semibold hover:text-[#2e6a9e] hover:cursor-pointer"
+                        >
+                            {item.label}
+                        </motion.a>
+                    ))}
                 </motion.ul>
-                <motion.button className="hidden md:block ml-auto">
+                <motion.button
+                    variants={navItemVariants}
+                    className="hidden md:block ml-auto"
+                >
                     <Button className="bg-[#2e6a9e] shadow-[#2e6a9e] shadow-lg hover:bg-[#2b3946]">
                         Let's Connect
                     </Button>
@@ -106,9 +137,11 @@ export default function App() {
 
             {/* Mobile Navbar */}
             <motion.nav
-                className={`${
-                    isOpen ? "block" : "hidden"
-                } md:hidden fixed top-0 right-0 w-[75%] h-dvh bg-white z-10`}
+                variants={{ hidden: { right: "-100%" }, visible: { right: 0 } }}
+                initial="hidden"
+                animate={isOpen ? "visible" : "hidden"}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className={`md:hidden fixed top-0 w-[75%] h-dvh bg-white z-10`}
             >
                 <motion.p className="w-full px-8 py-6">
                     <Button
@@ -165,20 +198,53 @@ export default function App() {
                 </motion.ul>
             </motion.nav>
             {/* Black bakcgroun when navbar open in mobile */}
-            <motion.div
-                onClick={() => setIsOpen(false)}
-                className={`fixed top-0 left-0 ${
-                    isOpen ? "block" : "hidden"
-                } md:hidden w-full h-dvh bg-[#00000096] z-5`}
-            ></motion.div>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: { opacity: 1 },
+                        }}
+                        initial="hidden"
+                        animate={isOpen ? "visible" : "hidden"}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsOpen(false)}
+                        className={`fixed top-0 left-0 md:hidden w-full h-dvh bg-[#00000096] z-5`}
+                    ></motion.div>
+                )}
+            </AnimatePresence>
 
-            <HomePage />
-            <AboutUs />
-            <Services />
-            <Portfolio />
-            <PricingSection />
-            <ContactUs />
-            <Footer />
+            <StaggedParrent.Provider
+                value={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                        opacity: 1,
+                        transition: {
+                            staggerChildren: 0.4,
+                            bounceStiffness: 0,
+                        },
+                    },
+                }}
+            >
+                <DefaultVariant.Provider
+                    value={{
+                        hidden: { y: -100, opacity: 0 },
+                        visible: {
+                            y: 0,
+                            opacity: 1,
+                        },
+                    }}
+                >
+                    <HomePage />
+                    <AboutUs />
+                    <Services />
+                    <Portfolio />
+                    <PricingSection />
+                    <ContactUs />
+                    <Footer />
+                </DefaultVariant.Provider>
+            </StaggedParrent.Provider>
         </div>
     );
 }

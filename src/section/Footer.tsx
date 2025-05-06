@@ -17,10 +17,11 @@ export default function Footer() {
                     {/* Company Info */}
                     <div className="space-y-4">
                         <div className="flex items-center">
-                            <h2 className="text-2xl font-bold text-blue-600">
-                                Web
-                                <span className="text-gray-800">ArCraft</span>
-                            </h2>
+                            <img
+                                src="/img/logo.png"
+                                alt=""
+                                className="w-[10rem]"
+                            />
                         </div>
                         <p className="text-gray-600">
                             A creative digital services company specializing in
@@ -30,25 +31,25 @@ export default function Footer() {
                         <div className="flex space-x-4">
                             <a
                                 href="#"
-                                className="text-blue-600 hover:text-blue-800 transition-colors"
+                                className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
                             >
                                 <Facebook size={20} />
                             </a>
                             <a
                                 href="#"
-                                className="text-blue-600 hover:text-blue-800 transition-colors"
+                                className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
                             >
                                 <Instagram size={20} />
                             </a>
                             <a
                                 href="#"
-                                className="text-blue-600 hover:text-blue-800 transition-colors"
+                                className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
                             >
                                 <Twitter size={20} />
                             </a>
                             <a
                                 href="#"
-                                className="text-blue-600 hover:text-blue-800 transition-colors"
+                                className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
                             >
                                 <Linkedin size={20} />
                             </a>
@@ -64,7 +65,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Home
                                 </a>
@@ -72,7 +73,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     About Us
                                 </a>
@@ -80,7 +81,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Services
                                 </a>
@@ -88,7 +89,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Portfolio
                                 </a>
@@ -96,7 +97,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Pricing
                                 </a>
@@ -104,7 +105,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Contact Us
                                 </a>
@@ -121,7 +122,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Web Development
                                 </a>
@@ -129,7 +130,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     SEO Optimization
                                 </a>
@@ -137,7 +138,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Social Media Marketing
                                 </a>
@@ -145,7 +146,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Content Creation
                                 </a>
@@ -153,7 +154,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="#"
-                                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Digital Strategy
                                 </a>
@@ -170,7 +171,7 @@ export default function Footer() {
                             <li className="flex items-start space-x-2">
                                 <MapPin
                                     size={18}
-                                    className="text-blue-600 mt-1 flex-shrink-0"
+                                    className="text-[#2e6a9e] mt-1 flex-shrink-0"
                                 />
                                 <span className="text-gray-600">
                                     123 Business Street, City, Country
@@ -179,7 +180,7 @@ export default function Footer() {
                             <li className="flex items-center space-x-2">
                                 <Phone
                                     size={18}
-                                    className="text-blue-600 flex-shrink-0"
+                                    className="text-[#2e6a9e] flex-shrink-0"
                                 />
                                 <span className="text-gray-600">
                                     +123 456 7890
@@ -188,7 +189,7 @@ export default function Footer() {
                             <li className="flex items-center space-x-2">
                                 <Mail
                                     size={18}
-                                    className="text-blue-600 flex-shrink-0"
+                                    className="text-[#2e6a9e] flex-shrink-0"
                                 />
                                 <span className="text-gray-600">
                                     info@webarcraft.com
@@ -218,19 +219,19 @@ export default function Footer() {
                     <div className="flex space-x-4 mt-4 md:mt-0">
                         <a
                             href="#"
-                            className="hover:text-blue-600 transition-colors"
+                            className="hover:text-[#2e6a9e] transition-colors"
                         >
                             Privacy Policy
                         </a>
                         <a
                             href="#"
-                            className="hover:text-blue-600 transition-colors"
+                            className="hover:text-[#2e6a9e] transition-colors"
                         >
                             Terms of Service
                         </a>
                         <a
                             href="#"
-                            className="hover:text-blue-600 transition-colors"
+                            className="hover:text-[#2e6a9e] transition-colors"
                         >
                             Sitemap
                         </a>
