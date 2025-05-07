@@ -1,12 +1,4 @@
-import {
-    Facebook,
-    Instagram,
-    Linkedin,
-    Mail,
-    MapPin,
-    Phone,
-    Twitter,
-} from "lucide-react";
+import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { Separator } from "@/components/ui/separator";
 
