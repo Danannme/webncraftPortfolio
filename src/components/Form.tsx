@@ -215,12 +215,16 @@ export default function MyForm() {
                     )}
                 />
                 {form.formState.isSubmitting ? (
-                    <Button disabled size="lg">
+                    <Button disabled size="lg" className="bg-[#2e6a9e]">
                         <Loader2 className="animate-spin" />
                         Please wait
                     </Button>
                 ) : (
-                    <Button type="submit" size="lg" className="cursor-pointer">
+                    <Button
+                        type="submit"
+                        size="lg"
+                        className="cursor-pointer bg-[#2e6a9e]"
+                    >
                         Submit
                     </Button>
                 )}

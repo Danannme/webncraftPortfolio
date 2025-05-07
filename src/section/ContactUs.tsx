@@ -12,7 +12,7 @@ export default function ContactUs() {
             variants={staggedParrent}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
             id="contactus"
             className="w-[90%] mb-20 md:mb-40 scroll-mt-30"
         >

@@ -46,7 +46,7 @@ export default function Services() {
             variants={staggedParrent}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
             id="services"
             className="flex flex-col items-center w-[85%] max-w-[1200px] gap-4 mb-20 md:mb-40 scroll-mt-25 md:scroll-mt-40"
         >

@@ -15,7 +15,7 @@ export default function AboutUs() {
             variants={staggedParrent}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
             id="aboutus"
             className="flex flex-col items-center md:flex-row md:justify-center w-[85%] md:w-[70%] max-w-[1200px] gap-10 md:gap-50 mb-20 md:mb-40 scroll-mt-28 md:scroll-mt-45"
         >
@@ -38,7 +38,7 @@ export default function AboutUs() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{
-                        duration: 0.4,
+                        duration: 0.8,
                         ease: "easeInOut",
                         bounce: 0,
                     }}
@@ -56,7 +56,7 @@ export default function AboutUs() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{
-                        duration: 0.4,
+                        duration: 0.8,
                         ease: "easeInOut",
                         bounce: 0,
                     }}
@@ -70,7 +70,7 @@ export default function AboutUs() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{
-                        duration: 0.4,
+                        duration: 0.8,
                         ease: "easeInOut",
                         bounce: 0,
                     }}

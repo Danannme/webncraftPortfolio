@@ -52,9 +52,11 @@ export default function HomePage() {
                         variants={defaultVariant}
                         transition={{ bounce: 0 }}
                     >
-                        <Button className="bg-[#2e6a9e] shadow-[#2e6a9e] shadow-lg hover:bg-[#2b3946] w-fit h-[2.5rem]">
-                            Book Free Consultation
-                        </Button>
+                        <a href="#contactus">
+                            <Button className="bg-[#2e6a9e] shadow-[#2e6a9e] shadow-lg hover:bg-[#2b3946] w-fit h-[2.5rem]">
+                                Book Free Consultation
+                            </Button>
+                        </a>
                     </motion.button>
                 </motion.div>
 

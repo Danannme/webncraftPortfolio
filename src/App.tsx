@@ -121,9 +121,11 @@ export default function App() {
                     variants={navItemVariants}
                     className="hidden md:block ml-auto"
                 >
-                    <Button className="bg-[#2e6a9e] shadow-[#2e6a9e] shadow-lg hover:bg-[#2b3946]">
-                        Let's Connect
-                    </Button>
+                    <a href="#contactus">
+                        <Button className="bg-[#2e6a9e] shadow-[#2e6a9e] shadow-lg hover:bg-[#2b3946]">
+                            Let's Connect
+                        </Button>
+                    </a>
                 </motion.button>
                 <motion.span
                     className="ml-auto md:hidden"

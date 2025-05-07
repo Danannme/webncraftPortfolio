@@ -7,11 +7,26 @@ import {
     Phone,
     Twitter,
 } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 import { Separator } from "@/components/ui/separator";
+
+import { motion } from "framer-motion";
+
+const appearBottom = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+};
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-gray-50 pt-8 pb-8">
+        <motion.footer
+            variants={appearBottom}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+            className="w-full bg-gray-50 pt-8 pb-8"
+        >
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Company Info */}
@@ -31,27 +46,24 @@ export default function Footer() {
                         <div className="flex space-x-4">
                             <a
                                 href="#"
+                                target="_blank"
                                 className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
                             >
                                 <Facebook size={20} />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/WeAreWebNCraft"
+                                target="_blank"
                                 className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
                             >
                                 <Instagram size={20} />
                             </a>
                             <a
                                 href="#"
+                                target="_blank"
                                 className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
                             >
-                                <Twitter size={20} />
-                            </a>
-                            <a
-                                href="#"
-                                className="text-[#2e6a9e] hover:text-blue-800 transition-colors"
-                            >
-                                <Linkedin size={20} />
+                                <FaXTwitter size={20} />
                             </a>
                         </div>
                     </div>
@@ -72,7 +84,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#aboutus"
                                     className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     About Us
@@ -80,7 +92,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#services"
                                     className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Services
@@ -88,7 +100,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#portfolio"
                                     className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Portfolio
@@ -96,7 +108,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#pricing"
                                     className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Pricing
@@ -104,7 +116,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#contactus"
                                     className="text-gray-600 hover:text-[#2e6a9e] transition-colors"
                                 >
                                     Contact Us
@@ -168,22 +180,13 @@ export default function Footer() {
                             Contact Us
                         </h3>
                         <ul className="space-y-2">
-                            <li className="flex items-start space-x-2">
-                                <MapPin
-                                    size={18}
-                                    className="text-[#2e6a9e] mt-1 flex-shrink-0"
-                                />
-                                <span className="text-gray-600">
-                                    123 Business Street, City, Country
-                                </span>
-                            </li>
                             <li className="flex items-center space-x-2">
                                 <Phone
                                     size={18}
                                     className="text-[#2e6a9e] flex-shrink-0"
                                 />
                                 <span className="text-gray-600">
-                                    +123 456 7890
+                                    +971 (50) 419 6249
                                 </span>
                             </li>
                             <li className="flex items-center space-x-2">
@@ -192,7 +195,7 @@ export default function Footer() {
                                     className="text-[#2e6a9e] flex-shrink-0"
                                 />
                                 <span className="text-gray-600">
-                                    info@webarcraft.com
+                                    TheWebNCraftTeam@gmail.com
                                 </span>
                             </li>
                             <li className="mt-4">
@@ -216,28 +219,8 @@ export default function Footer() {
                         &copy; {new Date().getFullYear()} WebArCraft. All rights
                         reserved.
                     </p>
-                    <div className="flex space-x-4 mt-4 md:mt-0">
-                        <a
-                            href="#"
-                            className="hover:text-[#2e6a9e] transition-colors"
-                        >
-                            Privacy Policy
-                        </a>
-                        <a
-                            href="#"
-                            className="hover:text-[#2e6a9e] transition-colors"
-                        >
-                            Terms of Service
-                        </a>
-                        <a
-                            href="#"
-                            className="hover:text-[#2e6a9e] transition-colors"
-                        >
-                            Sitemap
-                        </a>
-                    </div>
                 </div>
             </div>
-        </footer>
+        </motion.footer>
     );
 }
