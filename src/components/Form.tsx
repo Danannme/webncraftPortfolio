@@ -30,7 +30,7 @@ const formSchema = z.object({
     email: z.string().email(),
     mobileNumber: z.string(),
     orgName: z.string().min(1),
-    "which best describes you?": z.array(z.string()).optional(),
+    "which best describes you?": z.array(z.string()),
     "what services are you interested in?": z
         .array(z.string())
         .nonempty("Please at least one item"),
@@ -112,10 +112,10 @@ export default function MyForm() {
                             <FormLabel>Mobile Number</FormLabel>
                             <FormControl className="w-full">
                                 {/* <PhoneInput
-                                    placeholder=""
-                                    {...field}
-                                    defaultCountry="TR"
-                                /> */}
+                                        placeholder=""
+                                        {...field}
+                                        defaultCountry="TR"
+                                    /> */}
                                 <Input type="tel" {...field} />
                             </FormControl>
 
