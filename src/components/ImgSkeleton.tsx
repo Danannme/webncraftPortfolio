@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -12,7 +12,6 @@ export default function ImgSkeleton({
     motionVariant: {};
 }) {
     const [isLoading, setIsLoading] = useState(true);
-    const image = useRef(null);
 
     // useEffect(() => {
     //     async function imgEvent() {
