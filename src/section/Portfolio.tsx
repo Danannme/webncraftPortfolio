@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 import { PinContainer } from "../components/ui/3d-pin";
 import { DefaultVariant, StaggedParrent } from "@/App";
+import ImgSkeleton from "@/components/ImgSkeleton";
 
 const portfolioItem = [
     {
@@ -63,11 +64,19 @@ export default function Portfolio() {
                                         </span>
                                     </div>
                                     {/* <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" /> */}
-                                    <img
+                                    <ImgSkeleton
+                                        src={project.src}
+                                        styling="w-full my-auto"
+                                        motionVariant={{
+                                            hidden: {},
+                                            visible: {},
+                                        }}
+                                    />
+                                    {/* <img
                                         src={project.src}
                                         className="w-full my-auto"
                                         alt=""
-                                    />
+                                    /> */}
                                 </div>
                             </PinContainer>
                         </motion.div>

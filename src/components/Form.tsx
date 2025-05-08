@@ -48,18 +48,8 @@ export default function MyForm() {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
         try {
-            // const emailSend = {
-            //     name: values.fullName,
-            //     email: values.email,
-            //     mobileNumber: values.mobileNumber,
-            //     orgName: values.orgName,
-            //     "which best describes you?":
-            //         values["which best describes you?"],
-            //     "what services are you interested in?":
-            //         values["what services are you interested in?"],
-            // };
-            await emailjs.send("service_crpr9cs", "template_wvmbo3l", values, {
-                publicKey: "HJKVx5hj66QUORDgN",
+            await emailjs.send("service_plaqthp", "template_ff52fmc", values, {
+                publicKey: "4_1_0Y7m_MY9vJIsy",
             });
             toast.success("message sent successfully");
         } catch (error) {

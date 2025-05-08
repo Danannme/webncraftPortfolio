@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import ImgSkeleton from "@/components/ImgSkeleton";
 import { DefaultVariant, StaggedParrent } from "@/App";
 
 export default function HomePage() {
@@ -68,18 +69,15 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     className="relative hero-img-container flex w-full"
                 >
-                    <motion.img
-                        variants={defaultTopVariant}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                    <ImgSkeleton
                         src="/img/heroImg2.png"
-                        className=" w-[50%] aspect-square drop-shadow-gray-300 drop-shadow-2xl"
+                        styling="w-[50%] aspect-square drop-shadow-gray-300 drop-shadow-2xl"
+                        motionVariant={defaultTopVariant}
                     />
-                    <motion.img
-                        variants={defaultTopVariant}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                    <ImgSkeleton
                         src="/img/heroImg.png"
-                        alt=""
-                        className="absolute right-0 -top-10 w-[50%] aspect-square drop-shadow-gray-300 drop-shadow-2xl"
+                        styling="absolute right-0 -top-10 w-[50%] aspect-square drop-shadow-gray-300 drop-shadow-2xl"
+                        motionVariant={defaultTopVariant}
                     />
                 </motion.div>
             </motion.div>

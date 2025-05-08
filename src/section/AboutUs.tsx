@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { StaggedParrent } from "@/App";
+import ImgSkeleton from "@/components/ImgSkeleton";
 
 const leftAppear = {
     hidden: { x: -100, opacity: 0 },
@@ -32,19 +33,10 @@ export default function AboutUs() {
 
             {/* Image */}
             <div className="block text-3xl font-bold">
-                <motion.img
-                    variants={leftAppear}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    transition={{
-                        duration: 0.8,
-                        ease: "easeInOut",
-                        bounce: 0,
-                    }}
+                <ImgSkeleton
+                    motionVariant={leftAppear}
                     src="/img/aboutusImg.png"
-                    className="w-full md:w-[100rem] drop-shadow-2xl drop-shadow-gray-300"
-                    alt=""
+                    styling="w-full md:w-[100rem] drop-shadow-2xl drop-shadow-gray-300"
                 />
             </div>
 
@@ -64,6 +56,7 @@ export default function AboutUs() {
                 >
                     <span className="text-[#2e6a9e]">Who</span> We Are
                 </motion.h1>
+
                 <motion.p
                     variants={leftAppear}
                     initial="hidden"
