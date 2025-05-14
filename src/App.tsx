@@ -32,6 +32,8 @@ const navItemVariants = {
     visible: { y: 0, transition: { bounce: 0 } },
 };
 
+export const WebTheme = createContext("light");
+
 export const StaggedParrent = createContext({
     hidden: {},
     visible: {},
@@ -41,6 +43,21 @@ export const DefaultVariant = createContext({
     hidden: {},
     visible: {},
 });
+
+const murid = {
+    nama: "dana",
+    alamat: {
+        desa: "tawangsari",
+        kec: "kedungwaru",
+    },
+};
+
+const murid2 = {
+    ...murid,
+    alamat: { desa: "mangunsari" },
+};
+console.log(murid);
+console.log(murid2);
 
 export default function App() {
     const [isOpen, setIsOpen] = useState(false);

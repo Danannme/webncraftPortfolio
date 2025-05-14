@@ -147,14 +147,29 @@ export default function MyForm() {
                                     </MultiSelectorTrigger>
                                     <MultiSelectorContent>
                                         <MultiSelectorList>
-                                            <MultiSelectorItem value={"React"}>
-                                                React
+                                            <MultiSelectorItem
+                                                value={
+                                                    "I just want to learn more/have a consultation"
+                                                }
+                                            >
+                                                I just want to learn more/have a
+                                                consultation
                                             </MultiSelectorItem>
-                                            <MultiSelectorItem value={"Vue"}>
-                                                Vue
+                                            <MultiSelectorItem
+                                                value={
+                                                    "I already know what I need and want to get started"
+                                                }
+                                            >
+                                                I already know what I need and
+                                                want to get started
                                             </MultiSelectorItem>
-                                            <MultiSelectorItem value={"Svelte"}>
-                                                Svelte
+                                            <MultiSelectorItem
+                                                value={
+                                                    "I am still deciding but might need services in the future"
+                                                }
+                                            >
+                                                I am still deciding but might
+                                                need services in the future
                                             </MultiSelectorItem>
                                         </MultiSelectorList>
                                     </MultiSelectorContent>
@@ -186,14 +201,27 @@ export default function MyForm() {
                                     </MultiSelectorTrigger>
                                     <MultiSelectorContent>
                                         <MultiSelectorList>
-                                            <MultiSelectorItem value={"React"}>
-                                                React
+                                            <MultiSelectorItem
+                                                value={"Brand Kit/Logo Design"}
+                                            >
+                                                Brand Kit/Logo Design
                                             </MultiSelectorItem>
-                                            <MultiSelectorItem value={"Vue"}>
-                                                Vue
+                                            <MultiSelectorItem
+                                                value={
+                                                    "Social Media Marketing (SMM)"
+                                                }
+                                            >
+                                                Social Media Marketing (SMM)
                                             </MultiSelectorItem>
-                                            <MultiSelectorItem value={"Svelte"}>
-                                                Svelte
+                                            <MultiSelectorItem
+                                                value={"UI/UX Design"}
+                                            >
+                                                UI/UX Design
+                                            </MultiSelectorItem>
+                                            <MultiSelectorItem
+                                                value={"Website Development"}
+                                            >
+                                                Website Development
                                             </MultiSelectorItem>
                                         </MultiSelectorList>
                                     </MultiSelectorContent>
